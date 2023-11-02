@@ -16,9 +16,8 @@
 </head>
 
 <body>
-    <h1></h1>
-
     <nav class="navbar navbar-expand-lg bg-dark">
+
         <!-- <nav id="mainNav" class="navbar navbar-default" style="background:black ;">  -->
         <div class="container-fluid">
             <a class="navbar-brand text-white" href="#">
@@ -140,6 +139,7 @@
             <div class="col-lg-4">
                 <div class="card mb-4">
                     <img src="https://source.unsplash.com/400x400/?Graphs" class="card-img-top" alt="Computer Science">
+                    <!-- <img src="https://api.unsplash.com/400x400/?Graphs" class="card-img-top" alt="Computer Science"> -->
                     <div class="card-body">
                         <h5 class="card-title">Past Placements</h5>
                         <p class="card-text">Check placement records of past years and analysis</p>

@@ -16,6 +16,16 @@
             justify-content: center;
             min-height: 100vh;
             overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #8e44ad, #341f97);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-y: scroll; /* Add scrollbar to the whole page */
         }
 
         .drive-title {
@@ -33,6 +43,9 @@
             gap: 20px;
             margin-top: 20px;
             padding: 20px;
+            /* Existing styles */
+            max-height: 70vh;
+            overflow-y: auto;
         }
 
         .company-card {
@@ -77,14 +90,47 @@
                 opacity: 1;
             }
         }
-    </style>
+        
+        
+        </style>
+        <!-- Filter Section -->
+    <div class="filter-section">
+        <h2>Filter Companies</h2>
+        <p>Select a category to view related companies:</p>
+        <div class="filter-options">
+            <button onclick="filterCompanies('technology')">Technology</button>
+            <button onclick="filterCompanies('e-commerce')">E-commerce</button>
+            <button onclick="filterCompanies('webdev')">Web Development</button>
+            <button onclick="filterCompanies('android')">Android</button>
+            <button onclick="filterCompanies('cloud')">Cloud</button>
+            <button onclick="filterCompanies('os')">Operating Systems</button>
+        
+            <!-- Add more buttons for different categories -->
+            <button onclick="filterCompanies('all')">Show All</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to filter companies based on category
+        function filterCompanies(category) {
+            const allCompanies = document.querySelectorAll('.company-card');
+
+            allCompanies.forEach(company => {
+                if (company.dataset.category === category || category === 'all') {
+                    company.style.display = 'block';
+                } else {
+                    company.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </head>
 <body>
     <h1 class="drive-title">Ongoing and Upcoming Drives</h1>
     <div class="company-section">
         <div class="company-card">
             <img class="company-logo" src="google.jpeg" alt="Google Logo">
-            <div class="company-name"><a href="../jw/form3.php">Google</a></div>
+            <div class="company-name">Google</div>
             <div class="company-details">
                 <p>Google is a multinational technology company known for its search engine.</p>
                 <p>Highlights:</p>
@@ -96,9 +142,8 @@
             </div>
         </div>
         <div class="company-card">
-            <!-- <a href="../homepage/jw/form2.php"> -->
             <img class="company-logo" src="ama.jpeg" alt="Amazon Logo">
-            <div class="company-name"><a href="../jw/form2.php"> Amazon </a></div>
+            <div class="company-name">Amazon</div>
             <div class="company-details">
                 <p>Amazon is a global e-commerce and cloud computing company.</p>
                 <p>Highlights:</p>
@@ -108,11 +153,10 @@
                     <li>Prime Video</li>
                 </ul>
             </div>
-          <!-- </a> -->
         </div>
         <div class="company-card">
             <img class="company-logo" src="fk.jpeg" alt="Flipkart Logo">
-            <div class="company-name"><a href="../jw/form1.php">Flipkart</a></div>
+            <div class="company-name">Flipkart</div>
             <div class="company-details">
                 <p>Flipkart is an Indian e-commerce company offering online shopping.</p>
                 <p>Highlights:</p>
@@ -126,7 +170,7 @@
         <!-- Add more company cards with details here -->
         <div class="company-card">
             <img class="company-logo" src="adobe.jpeg" alt="Adobe Logo">
-            <div class="company-name"><a href="../jw/form.php">Adobe</a></div>
+            <div class="company-name">Adobe</div>
             <div class="company-details">
                 <p>Adobe is a multinational software company known for its creative software products.</p>
                 <p>Highlights:</p>
@@ -137,9 +181,9 @@
                 </ul>
             </div>
         </div>
-        <div class="company-card">
+        <div class="company-card" data-category="webdev">
             <img class="company-logo" src="apple.jpeg" alt="Apple Logo">
-            <div class="company-name"><a href="../jw/form.php">Apple</a></div>
+            <div class="company-name">Apple</div>
             <div class="company-details">
                 <p>Apple Inc. is a technology company known for its iPhones, MacBooks, and more.</p>
                 <p>Highlights:</p>
@@ -150,9 +194,9 @@
                 </ul>
             </div>
         </div>
-        <div class="company-card">
+        <div class="company-card" data-category="android">
             <img class="company-logo" src="netflix.jpeg" alt="Netflix Logo">
-            <div class="company-name"><a href="../jw/form.php">Netflix</a></div>
+            <div class="company-name">Netflix</div>
             <div class="company-details">
                 <p>Netflix is a popular streaming service with a wide range of movies and TV shows.</p>
                 <p>Highlights:</p>
@@ -163,9 +207,9 @@
                 </ul>
             </div>
         </div>
-        <div class="company-card">
+        <div class="company-card" data-category="cloud">
             <img class="company-logo" src="ms.jpeg" alt="Microsoft Logo">
-            <div class="company-name"><a href="../jw/form.php">Microsoft</a></div>
+            <div class="company-name">Microsoft</div>
             <div class="company-details">
                 <p>Microsoft is a multinational technology company known for its software products.</p>
                 <p>Highlights:</p>
@@ -176,9 +220,9 @@
                 </ul>
             </div>
         </div>
-        <div class="company-card">
+        <div class="company-card" data-category="os">
             <img class="company-logo" src="fb.jpeg" alt="Facebook Logo">
-            <div class="company-name"><a href="../jw/form.php">Facebook</a></div>
+            <div class="company-name">Facebook</div>
             <div class="company-details">
                 <p>Facebook is a social media platform connecting billions of people worldwide.</p>
                 <p>Highlights:</p>
@@ -189,9 +233,9 @@
                 </ul>
             </div>
         </div>
-        <div class="company-card">
+        <div class="company-card" data-category="os">
             <img class="company-logo" src="oracle.jpg" alt="Oracle Logo">
-            <div class="company-name"><a href="../jw/form.php">Oracle</a></div>
+            <div class="company-name">Oracle</div>
             <div class="company-details">
                 <p>Oracle Corporation is a multinational computer technology corporation.</p>
                 <p>Highlights:</p>

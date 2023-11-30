@@ -155,7 +155,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Study plan</h5>
                         <p class="card-text">Explore career opportunities in the business world</p>
-                        <a href="#" class="btn btn-primary">click here</a>
+                        <a href="../homepage/study/smt.php" class="btn btn-primary">click here</a>
                     </div>
                 </div>
             </div>

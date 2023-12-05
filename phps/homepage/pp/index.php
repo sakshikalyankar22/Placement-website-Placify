@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #8e44ad, #341f97);
+            background: linear-gradient(to bottom, #b5d1e3, #a7bbdb, #8e9fc7);
             font-family: 'Arial', sans-serif;
             display: flex;
             flex-direction: column;
@@ -20,7 +18,7 @@
             overflow: hidden;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #8e44ad, #341f97);
+            background: linear-gradient(to bottom, #b5d1e3, #a7bbdb, #8e9fc7);
             font-family: 'Arial', sans-serif;
             display: flex;
             flex-direction: column;
@@ -84,6 +82,31 @@
             font-family: 'Verdana', sans-serif; /* Attractive font for details */
         }
 
+        .filter-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.filter-options button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    background-color: #b5d1e3;
+    color: #341f97;
+}
+
+.filter-options button:hover {
+    background-color: #8e44ad;
+    color: #ffffff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -97,15 +120,15 @@
         </style>
         <!-- Filter Section -->
     <div class="filter-section">
-        <h2>Filter Companies</h2>
-        <p>Select a category to view related companies:</p>
+        <h2 style="font-size: xx-large;">Filter Companies</h2>
+        <p style="font-size: x-large;">Choose as per your skills:</p>
         <div class="filter-options">
-            <button onclick="filterCompanies('technology')">Technology</button>
-            <button onclick="filterCompanies('e-commerce')">E-commerce</button>
-            <button onclick="filterCompanies('webdev')">Web Development</button>
-            <button onclick="filterCompanies('android')">Android</button>
-            <button onclick="filterCompanies('cloud')">Cloud</button>
-            <button onclick="filterCompanies('os')">Operating Systems</button>
+            <button onclick="filterCompanies('Internet Services')">Internet Services</button>
+            <button onclick="filterCompanies('E-commerce')">E-commerce</button>
+            <button onclick="filterCompanies('Technology')">Technology</button>
+            <button onclick="filterCompanies('Entertainment')">Entertainment</button>
+            <button onclick="filterCompanies('Electronics')">Electronics</button>
+            <button onclick="filterCompanies('Consulting Services')">Consulting Services</button>
         
             <!-- Add more buttons for different categories -->
             <button onclick="filterCompanies('all')">Show All</button>
@@ -130,9 +153,9 @@
 <body>
     <h1 class="drive-title">Ongoing and Upcoming Drives</h1>
     <div class="company-section">
-        <div class="company-card">
+        <div class="company-card" data-category="Internet Services">
             <img class="company-logo" src="google.jpeg" alt="Google Logo">
-            <div class="company-name"><a href="../jw/form3.php">Google</a></div>
+            <div class="company-name">Google</div>
             <div class="company-details">
                 <p>Google is a multinational technology company known for its search engine.</p>
                 <p>Highlights:</p>
@@ -143,9 +166,9 @@
                 </ul>
             </div>
         </div>
-        <div class="company-card">
+        <div class="company-card" data-category="E-commerce">
             <img class="company-logo" src="ama.jpeg" alt="Amazon Logo">
-            <div class="company-name"><a href="../jw/form2.php"> Amazon </a></div>
+            <div class="company-name">Amazon</div>
             <div class="company-details">
                 <p>Amazon is a global e-commerce and cloud computing company.</p>
                 <p>Highlights:</p>
@@ -156,9 +179,9 @@
                 </ul>
             </div>
         </div>
-        <div class="company-card">
+        <div class="company-card" data-category="E-commerce">
             <img class="company-logo" src="fk.jpeg" alt="Flipkart Logo">
-            <div class="company-name"><a href="../jw/form1.php">Flipkart</a></div>
+            <div class="company-name">Flipkart</div>
             <div class="company-details">
                 <p>Flipkart is an Indian e-commerce company offering online shopping.</p>
                 <p>Highlights:</p>
@@ -170,9 +193,9 @@
             </div>
         </div>
         <!-- Add more company cards with details here -->
-        <div class="company-card">
+        <div class="company-card" data-category="Technology">
             <img class="company-logo" src="adobe.jpeg" alt="Adobe Logo">
-            <div class="company-name"><a href="../jw/form.php">Adobe</a></div>
+            <div class="company-name">Adobe</div>
             <div class="company-details">
                 <p>Adobe is a multinational software company known for its creative software products.</p>
                 <p>Highlights:</p>
@@ -183,9 +206,9 @@
                 </ul>
             </div>
         </div>
-        <div class="company-card" data-category="webdev">
+        <div class="company-card" data-category="Electronics">
             <img class="company-logo" src="apple.jpeg" alt="Apple Logo">
-            <div class="company-name"><a href="../jw/form.php">Apple</a></div>
+            <div class="company-name">Apple</div>
             <div class="company-details">
                 <p>Apple Inc. is a technology company known for its iPhones, MacBooks, and more.</p>
                 <p>Highlights:</p>
@@ -196,9 +219,9 @@
                 </ul>
             </div>
         </div>
-        <div class="company-card" data-category="android">
+        <div class="company-card" data-category="Entertainment">
             <img class="company-logo" src="netflix.jpeg" alt="Netflix Logo">
-            <div class="company-name"><a href="../jw/form.php">Netflix</a></div>
+            <div class="company-name">Netflix</div>
             <div class="company-details">
                 <p>Netflix is a popular streaming service with a wide range of movies and TV shows.</p>
                 <p>Highlights:</p>
@@ -209,9 +232,9 @@
                 </ul>
             </div>
         </div>
-        <div class="company-card" data-category="cloud">
+        <div class="company-card" data-category="Technology">
             <img class="company-logo" src="ms.jpeg" alt="Microsoft Logo">
-            <div class="company-name"><a href="../jw/form.php">Microsoft</a></div>
+            <div class="company-name">Microsoft</div>
             <div class="company-details">
                 <p>Microsoft is a multinational technology company known for its software products.</p>
                 <p>Highlights:</p>
@@ -222,9 +245,9 @@
                 </ul>
             </div>
         </div>
-        <div class="company-card" data-category="os">
+        <div class="company-card" data-category="Internet Services">
             <img class="company-logo" src="fb.jpeg" alt="Facebook Logo">
-            <div class="company-name"><a href="../jw/form.php">Facebook</a></div>
+            <div class="company-name">Facebook</div>
             <div class="company-details">
                 <p>Facebook is a social media platform connecting billions of people worldwide.</p>
                 <p>Highlights:</p>
@@ -235,9 +258,9 @@
                 </ul>
             </div>
         </div>
-        <div class="company-card" data-category="os">
+        <div class="company-card" data-category="Technology">
             <img class="company-logo" src="oracle.jpg" alt="Oracle Logo">
-            <div class="company-name"><a href="../jw/form.php">Oracle</a></div>
+            <div class="company-name">Oracle</div>
             <div class="company-details">
                 <p>Oracle Corporation is a multinational computer technology corporation.</p>
                 <p>Highlights:</p>
@@ -245,6 +268,77 @@
                     <li>Database Software</li>
                     <li>Cloud Infrastructure</li>
                     <li>Java Programming</li>
+                </ul>
+            </div>
+        </div>
+        <div class="company-card" data-category="Electronics">
+            <img class="company-logo" src="samsung.webp" alt="Amazon Logo">
+            <div class="company-name">Samsung</div>
+            <div class="company-details">
+                <p>Samsung is a global electronics company.</p>
+                <p>Highlights:</p>
+                <ul>
+                    <li>Android</li>
+                    <li>Smart devices</li>
+                    <li>Softwares</li>
+                </ul>
+            </div>
+        </div>
+        <div class="company-card" data-category="Consulting Services">
+            <img class="company-logo" src="cognizant.jpg" alt="Amazon Logo">
+            <div class="company-name">Cognizant</div>
+            <div class="company-details">
+                <p>Cognizant is a global cloud computing company.</p>
+                <p>Highlights:</p>
+                <ul>
+                    <li>E-commerce</li>
+                    <li>Web Services</li>
+                    <li>Software</li>
+                </ul>
+            </div>
+        </div>
+        <div class="company-card" data-category="Consulting Services">
+            <img class="company-logo" src="hexaware.jpg" alt="Amazon Logo">
+            <div class="company-name">Hexaware</div>
+            <div class="company-details">
+                <p>Experience Certainty</p>
+                <p>Highlights:</p>
+                <ul>
+                    <li>Application Services.</li>
+                    <li>Business Process Services.</li>
+                    <li>Cloud Services.</li>
+                    <li>Hexaware's Strategic IT Consulting</li>
+                    <li>Cyber Security Resilience Services.</li>
+                    <li>Customer Experience Services.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="company-card" data-category="Consulting Services">
+            <img class="company-logo" src="ama.jpeg" alt="Amazon Logo">
+            <div class="company-name">TCS</div>
+            <div class="company-details">
+                <p>Beyond The Obvious.</p>
+                <p>Highlights:</p>
+                <ul>
+                    <li>Service</li>
+                    <li>Cloud.</li>
+                    <li>Cognitive Business Operations.</li>
+                    <li>Cybersecurity.</li>
+                    <li>Network Solutions and Services.</li>
+                    <li>TCS Interactive.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="company-card" data-category="Entertainment">
+            <img class="company-logo" src="sony.jpeg" alt="Amazon Logo">
+            <div class="company-name">Sony</div>
+            <div class="company-details">
+                <p>Samsung is a global electronics company.</p>
+                <p>Highlights:</p>
+                <ul>
+                    <li>Android</li>
+                    <li>Smart devices</li>
+                    <li>Softwares</li>
                 </ul>
             </div>
         </div>
